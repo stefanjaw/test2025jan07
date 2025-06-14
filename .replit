@@ -1,6 +1,24 @@
 [nix]
 channel = "stable-24_05"
 
+[env]
+PATH = "${REPLIT_NIX_CHANNEL}/bin"
+
+[[ports]]
+localPort = 5000
+externalPort = 80
+
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix"]
+
+[languages]
+
+[languages.javascript]
+pattern = "**/{*.js,*.jsx,*.ts,*.tsx,*.json}"
+
+[languages.javascript.languageServer]
+start = "typescript-language-server --stdio"
+
 [deployment]
 run = ["sh", "-c", "cd test2025jan07/hello-world-app && npm install && ng serve --host 0.0.0.0 --port 5000"]
 
