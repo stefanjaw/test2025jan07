@@ -1,0 +1,4 @@
+[submodule "test2025jan07"]
+	path = test2025jan07
+	url = https://github.com/stefanjaw/test2025jan07.git
+	branch = angular
