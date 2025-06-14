@@ -1,0 +1,36 @@
+
+<div class="products-screen">
+  <h1>Products Catalog</h1>
+  <p>Browse and manage your product inventory</p>
+  
+  <div class="products-actions">
+    <button class="btn btn-primary">Add New Product</button>
+    <select class="filter-select">
+      <option value="">All Categories</option>
+      <option value="electronics">Electronics</option>
+      <option value="clothing">Clothing</option>
+      <option value="books">Books</option>
+    </select>
+    <input type="search" placeholder="Search products..." class="search-input">
+  </div>
+  
+  <div class="products-grid">
+    <div class="product-card" *ngFor="let product of products">
+      <div class="product-image">
+        <div class="placeholder-image">{{ product.name.charAt(0) }}</div>
+      </div>
+      <div class="product-info">
+        <h3>{{ product.name }}</h3>
+        <p class="product-description">{{ product.description }}</p>
+        <div class="product-meta">
+          <span class="price">${{ product.price }}</span>
+          <span class="category">{{ product.category }}</span>
+        </div>
+        <div class="product-actions">
+          <button class="btn btn-sm">Edit</button>
+          <button class="btn btn-sm btn-danger">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

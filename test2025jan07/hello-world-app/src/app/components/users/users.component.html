@@ -1,0 +1,24 @@
+
+<div class="users-screen">
+  <h1>Users Management</h1>
+  <p>Manage user accounts, roles, and permissions</p>
+  
+  <div class="users-actions">
+    <button class="btn btn-primary">Add New User</button>
+    <input type="search" placeholder="Search users..." class="search-input">
+  </div>
+  
+  <div class="users-list">
+    <div class="user-card" *ngFor="let user of users">
+      <div class="user-info">
+        <h3>{{ user.name }}</h3>
+        <p>{{ user.email }}</p>
+        <span class="role">{{ user.role }}</span>
+      </div>
+      <div class="user-actions">
+        <button class="btn btn-sm">Edit</button>
+        <button class="btn btn-sm btn-danger">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>
