@@ -2,8 +2,20 @@
 channel = "stable-24_05"
 
 [deployment]
-run = ["sh", "-c", "ng serve --host 0.0.0.0 --port 5000"]
+run = ["sh", "-c", "cd test2025jan07/hello-world-app && npm install && ng serve --host 0.0.0.0 --port 5000"]
 
 [[ports]]
 localPort = 5000
 externalPort = 80
+
+[workflows]
+runButton = "Run Angular App"
+
+[[workflows.workflow]]
+name = "Run Angular App"
+author = 41951396
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "cd test2025jan07/hello-world-app && npm install && npx ng serve --host 0.0.0.0 --port 5000"
